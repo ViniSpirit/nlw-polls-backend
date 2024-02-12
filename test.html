@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    var ws = new WebSocket('ws://localhost:3333/test/5ae3beee-6114-40ce-b44b-1615456babe2/results');
+    ws.onopen = function () {
+      console.log('Conexão estabelecida');
+      ws.send('Olá, servidor!');
+    };
+    ws.onmessage = function (event) {
+      console.log('Mensagem recebida: ' + event.data);
+    };
+    ws.onerror = function (error) {
+      console.log('Erro: ' + error.message);
+    };
+  </script>
+</body>
+
+</html>
