@@ -12,7 +12,7 @@ export async function pollResults(app: FastifyInstance) {
 
     voting.subscribe(pollId, (message) => {
       connection.socket.send(JSON.stringify(message))
-      console.log(voting.getChannels())
+      // console.log(voting.getChannels())
 
     })
 
